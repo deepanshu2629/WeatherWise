@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+<div class="background-video-container" aria-hidden="true">
+  <video id="weatherVideo"
+         class="background-video"
+         autoplay
+         muted
+         loop
+         playsinline
+         poster="assets/img/cloud.jpg">
+  </video>
+  <div class="background-video-overlay"></div>
+</div>
+    
+    <header class="app-header">
+        <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <h1>WeatherWise</h1>
+        </div>
+        <div class="header-actions">
+            <div class="unit-toggle" role="group" aria-label="Temperature unit">
+                <button id="unitC" class="btn toggle active" aria-pressed="true">°C</button>
+                <button id="unitF" class="btn toggle" aria-pressed="false">°F</button>
+            </div>
+            
+        <button id="useLocationBtn" class="btn primary" title="Use my current location">
+            <span class="icon" aria-hidden="true">📍</span>
+            <span>Use my location</span>
+        </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section" aria-label="Search city in India">
+            <div class="search-bar">
+                <input id="searchInput" type="text" placeholder="Search city, state, or region in India..." aria-label="Search" autocomplete="off">
+                <button id="searchBtn" class="btn">Search</button>
+            </div>
+            <ul id="suggestions" class="suggestions" role="listbox" aria-label="Suggestions"></ul>
+        </section>
+
+        <section id="status" class="status" aria-live="polite"></section>
+
+        <section id="current" class="current" aria-label="Current weather">
+           
+        </section>
+
+        <section id="forecast" class="forecast" aria-label="7-day forecast">
+          
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <span>Data: Open‑Meteo</span>
+        <span>Created By Deepanshu • © <span id="year"></span></span>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
+
+
+
+
